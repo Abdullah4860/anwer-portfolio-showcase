@@ -53,14 +53,16 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-1">
-                <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                  <div className="w-72 h-72 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-6xl font-bold text-orange-400">
-                    AA
-                  </div>
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src="https://i.postimg.cc/q7HN32tV/1737576156275.jpg" 
+                    alt="Abdullah Anwer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-white font-bold">CSM®</span>
+                <span className="text-white font-bold text-xs">CSM®</span>
               </div>
             </div>
           </div>
