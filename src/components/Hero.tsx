@@ -17,18 +17,17 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="mb-6">
-              <h1 className="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-                Hi, I'm{" "}
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                  Abdullah Anwer
+                  The Product Mindset: Abdullah Anwer's Journey in Tech & Data
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-gray-300 mb-6">
-                Product Owner | Data-Driven Innovator | Tech Enthusiast
+                Product Owner | Data-Driven Innovator | API Integration Specialist
               </div>
               <p className="text-lg text-gray-400 max-w-2xl">
-                Bridging business and technology through data insights, agile delivery, 
-                and user-focused product development.
+                Bridging business and technology through agile delivery, data insights, 
+                and user-centric product development.
               </p>
             </div>
 

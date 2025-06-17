@@ -10,10 +10,10 @@ const Experience = () => {
       period: "June 2024 – Present",
       location: "Pakistan",
       achievements: [
-        "Led API-based integrations and Remittance product rollout",
-        "Implemented Agile and Scrum best practices across development teams",
-        "Delivered critical projects: Compliance Screening, Mastercard Gateway, Paycenter, and Aamarpay",
-        "Improved product delivery efficiency by 40% through optimized workflows"
+        "Leading product ownership for critical B2B integrations with global partners: Tencent, Temu, Yango",
+        "Rolled out high-impact Remittance and Compliance APIs",
+        "Implemented Agile workflows across tech teams, boosting delivery velocity by 40%",
+        "Spearheaded successful launches of Mastercard Gateway, Aamarpay, Paycenter, and more"
       ],
       color: "orange"
     },
