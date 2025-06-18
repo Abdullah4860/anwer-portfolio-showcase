@@ -1,4 +1,5 @@
 
+
 import { GraduationCap, Award, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,46 +9,43 @@ const About = () => {
     {
       name: "Certified ScrumMaster (CSM®)",
       issuer: "Scrum Alliance",
-      credentialId: "001691148",
       issued: "Sep 2024"
     },
     {
       name: "Scrum Fundamentals Certified (SFC)",
       issuer: "SCRUMstudy",
-      credentialId: "1034423",
       issued: "May 2024"
     },
     {
       name: "Fundamentals of Accelerated Computing with CUDA Python",
       issuer: "NVIDIA",
-      credentialId: "554d48803b6a4149969bb40d757d0263",
       issued: "Jul 2023"
     },
     {
       name: "Foundations: Data, Data, Everywhere",
       issuer: "Coursera",
-      credentialId: "MV4XWG8VWYQE",
       issued: ""
     },
     {
       name: "Intermediate SQL",
       issuer: "DataCamp",
-      credentialId: "a3e1454e168429351210a508600786e41acb764c",
       issued: ""
     },
     {
       name: "Introduction to SQL",
       issuer: "DataCamp",
-      credentialId: "a1fd6a58e3edd8d72169755adf49fe2e5143574b",
       issued: ""
     },
     {
       name: "Understanding Data Engineering",
       issuer: "DataCamp",
-      credentialId: "26532cc5078338b0d81cb64284eaf7e8d94e42f4",
       issued: ""
     }
   ];
+
+  const handleResumeDownload = () => {
+    window.open('https://drive.google.com/uc?export=download&id=1jpjZM8Fytq7HniDq1ZZzH4dCkVDzldDN', '_blank');
+  };
 
   return (
     <section id="about" className="py-20 bg-slate-800">
@@ -72,7 +70,10 @@ const About = () => {
               and integrations with global giants like Tencent, Yango, and Temu, I bridge the gap 
               between stakeholders and developers to deliver high-ROI features on time.
             </p>
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button 
+              onClick={handleResumeDownload}
+              className="bg-orange-500 hover:bg-orange-600 text-white"
+            >
               <Download className="mr-2" size={20} />
               Download Resume
             </Button>
@@ -112,12 +113,9 @@ const About = () => {
                   <div className="bg-orange-500 p-3 rounded-lg flex-shrink-0">
                     <Award className="text-white" size={20} />
                   </div>
-                  <div className="min-w-0">
-                    <h4 className="text-lg font-semibold text-white mb-2 leading-tight">{cert.name}</h4>
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-lg font-semibold text-white mb-2 leading-tight break-words">{cert.name}</h4>
                     <p className="text-orange-400 font-medium mb-1">{cert.issuer}</p>
-                    <p className="text-gray-400 text-sm mb-1">
-                      Credential ID: {cert.credentialId}
-                    </p>
                     {cert.issued && (
                       <p className="text-gray-400 text-sm">
                         Issued {cert.issued}
@@ -135,3 +133,4 @@ const About = () => {
 };
 
 export default About;
+
