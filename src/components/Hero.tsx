@@ -19,7 +19,7 @@ const Hero = () => {
             <div className="mb-6">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
-                  The Product Mindset: Abdullah Anwer's Journey in Tech & Data
+                  The Product Mindset: Abdullah's Journey in Tech & Data
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-gray-300 mb-6">
