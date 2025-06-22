@@ -1,10 +1,24 @@
-
 import { ExternalLink, Github, FileText, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "YouTube Data Engineering Project (AWS | ETL | Serverless)",
+      year: "2024",
+      description: "A complete cloud-native data engineering pipeline built on AWS. This project ingests and transforms trending YouTube video data using services like AWS Lambda, Glue, S3, and Athena. The final dataset is visualized using Amazon QuickSight for actionable insights.",
+      techStack: ["AWS S3", "Lambda", "Glue", "Athena", "QuickSight"],
+      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=500&h=300",
+      buttons: [
+        {
+          label: "GitHub Code",
+          url: "https://github.com/Abdullah4860/Portfolioprojects/tree/main/youtube-data-engineering",
+          icon: Github,
+          variant: "outline"
+        }
+      ]
+    },
     {
       title: "Property Price Prediction",
       year: "2022",
