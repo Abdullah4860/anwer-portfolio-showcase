@@ -1,5 +1,4 @@
 
-
 import { GraduationCap, Award, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -60,15 +59,16 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <div>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I'm a passionate Product Owner with a Computer Science background from IBA Karachi, 
-              currently driving impactful digital product integrations at Simpaisa. I specialize in 
-              translating business goals into technical roadmaps through agile methodologies, API 
-              integrations, and data-driven decision-making.
+              I help businesses build and scale data-driven products that simplify payments, drive automation, and ensure compliance — especially in fast-moving fintech environments.
+            </p>
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              With hands-on experience at Simpaisa and Daraz (Alibaba Group), I've worked on launching remittance products, automating lead qualification using AI, and improving decision-making through real-time analytics. From managing global API integrations to implementing PCI DSS and AML-compliance systems, I enjoy solving complex product challenges at the intersection of data, payments, and technology.
+            </p>
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              My work combines product thinking, process automation, and data intelligence — whether it's reducing manual workflows by 50%, launching a product that captures 10% market share, or enabling fraud detection through Power BI + Python.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              With hands-on experience at high-impact companies like Simpaisa, Daraz (Alibaba Group), 
-              and integrations with global giants like Tencent, Yango, and Temu, I bridge the gap 
-              between stakeholders and developers to deliver high-ROI features on time.
+              I love working with cross-functional teams, asking the right questions, and delivering measurable outcomes that move the business forward.
             </p>
             <Button 
               onClick={handleResumeDownload}
@@ -133,4 +133,3 @@ const About = () => {
 };
 
 export default About;
-
