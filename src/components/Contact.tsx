@@ -6,8 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { elementRef: headerRef, animationClasses: headerClasses } = useScrollAnimation({ direction: 'up', delay: 100 });
+  const { elementRef: contactInfoRef, animationClasses: contactInfoClasses } = useScrollAnimation({ direction: 'left', delay: 200 });
+  const { elementRef: formRef, animationClasses: formClasses } = useScrollAnimation({ direction: 'right', delay: 300 });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,7 +60,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className={`text-center mb-16 ${headerClasses}`}>
           <h2 className="text-4xl font-bold mb-4">
             Get in <span className="text-orange-400">Touch</span>
           </h2>
@@ -67,7 +72,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
+          <div ref={contactInfoRef} className={`space-y-6 ${contactInfoClasses}`}>
             <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
             {contactInfo.map((info, index) => (
               <Card key={index} className="p-6 bg-slate-700 border-slate-600 hover:border-orange-400 transition-all duration-300">
@@ -91,57 +96,59 @@ const Contact = () => {
             ))}
           </div>
 
-          <Card className="p-8 bg-slate-700 border-slate-600">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400"
-                />
-              </div>
-              <div>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400"
-                />
-              </div>
-              <div>
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400 resize-none"
-                />
-              </div>
-              <Button 
-                type="submit" 
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3"
-              >
-                <Send className="mr-2" size={20} />
-                Send Message
-              </Button>
-            </form>
-          </Card>
+          <div ref={formRef} className={formClasses}>
+            <Card className="p-8 bg-slate-700 border-slate-600">
+              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="bg-slate-600 border-slate-500 text-white placeholder-gray-400 focus:border-orange-400 resize-none"
+                  />
+                </div>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3"
+                >
+                  <Send className="mr-2" size={20} />
+                  Send Message
+                </Button>
+              </form>
+            </Card>
+          </div>
         </div>
 
         <div className="mt-16 text-center">
           <div className="border-t border-slate-600 pt-8">
             <p className="text-gray-400">
-              © 2024 Abdullah Anwer. Built with passion and React.
+              © 2025 Abdullah Anwer. Built with passion and React.
             </p>
           </div>
         </div>

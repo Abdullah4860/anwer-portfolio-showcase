@@ -1,8 +1,11 @@
 
 import { Code, Database, BarChart, Cog } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Skills = () => {
+  const { elementRef: headerRef, animationClasses: headerClasses } = useScrollAnimation({ direction: 'up', delay: 100 });
+
   const skillCategories = [
     {
       icon: Code,
@@ -33,7 +36,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className={`text-center mb-16 ${headerClasses}`}>
           <h2 className="text-4xl font-bold mb-4">
             Skills & <span className="text-orange-400">Technologies</span>
           </h2>
@@ -41,23 +44,32 @@ const Skills = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => (
-            <Card key={index} className="p-6 bg-slate-800 border-slate-700 hover:border-orange-400 transition-all duration-300 group">
-              <div className="text-center">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <category.icon className="text-white" size={28} />
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
-                <div className="space-y-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="bg-slate-700 text-gray-300 px-3 py-2 rounded-lg text-sm hover:bg-slate-600 transition-colors">
-                      {skill}
+          {skillCategories.map((category, index) => {
+            const { elementRef, animationClasses } = useScrollAnimation({ 
+              direction: 'up', 
+              delay: 100 + (index * 150) 
+            });
+            
+            return (
+              <div key={index} ref={elementRef} className={animationClasses}>
+                <Card className="p-6 bg-slate-800 border-slate-700 hover:border-orange-400 transition-all duration-300 group h-full">
+                  <div className="text-center">
+                    <div className={`w-16 h-16 mx-auto mb-4 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                      <category.icon className="text-white" size={28} />
                     </div>
-                  ))}
-                </div>
+                    <h3 className="text-lg font-semibold text-white mb-4">{category.title}</h3>
+                    <div className="space-y-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <div key={skillIndex} className="bg-slate-700 text-gray-300 px-3 py-2 rounded-lg text-sm hover:bg-slate-600 transition-colors">
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
               </div>
-            </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

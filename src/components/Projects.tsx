@@ -1,8 +1,12 @@
+
 import { ExternalLink, Github, FileText, Trophy } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
+  const { elementRef: headerRef, animationClasses: headerClasses } = useScrollAnimation({ direction: 'up', delay: 100 });
+
   const projects = [
     {
       title: "YouTube Data Engineering Project (AWS | ETL | Serverless)",
@@ -141,7 +145,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className={`text-center mb-16 ${headerClasses}`}>
           <h2 className="text-4xl font-bold mb-4">
             Featured <span className="text-orange-400">Projects</span>
           </h2>
@@ -149,57 +153,66 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="bg-slate-700 border-slate-600 overflow-hidden hover:border-orange-400 transition-all duration-300 group">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {project.year}
-                </div>
+          {projects.map((project, index) => {
+            const { elementRef, animationClasses } = useScrollAnimation({ 
+              direction: 'up', 
+              delay: 100 + (index * 150) 
+            });
+            
+            return (
+              <div key={index} ref={elementRef} className={animationClasses}>
+                <Card className="bg-slate-700 border-slate-600 overflow-hidden hover:border-orange-400 transition-all duration-300 group h-full">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {project.year}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.techStack.map((tech, techIndex) => (
+                        <span 
+                          key={techIndex} 
+                          className="bg-slate-600 text-orange-400 px-3 py-1 rounded-full text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      {project.buttons.map((button, buttonIndex) => {
+                        const IconComponent = button.icon;
+                        return (
+                          <Button 
+                            key={buttonIndex}
+                            size="sm" 
+                            variant={button.variant as "default" | "outline"}
+                            className={button.variant === "default" 
+                              ? "bg-orange-500 hover:bg-orange-600 text-white" 
+                              : "border-gray-600 text-gray-300 hover:bg-gray-600"
+                            }
+                            onClick={() => window.open(button.url, '_blank')}
+                          >
+                            <IconComponent className="mr-2" size={16} />
+                            {button.label}
+                          </Button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </Card>
               </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4 text-sm leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
-                      className="bg-slate-600 text-orange-400 px-3 py-1 rounded-full text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex flex-wrap gap-3">
-                  {project.buttons.map((button, buttonIndex) => {
-                    const IconComponent = button.icon;
-                    return (
-                      <Button 
-                        key={buttonIndex}
-                        size="sm" 
-                        variant={button.variant as "default" | "outline"}
-                        className={button.variant === "default" 
-                          ? "bg-orange-500 hover:bg-orange-600 text-white" 
-                          : "border-gray-600 text-gray-300 hover:bg-gray-600"
-                        }
-                        onClick={() => window.open(button.url, '_blank')}
-                      >
-                        <IconComponent className="mr-2" size={16} />
-                        {button.label}
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
-            </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

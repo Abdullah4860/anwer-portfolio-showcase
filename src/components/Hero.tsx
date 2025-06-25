@@ -1,8 +1,14 @@
 
 import { ArrowDown, Mail, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Hero = () => {
+  const { elementRef: titleRef, animationClasses: titleClasses } = useScrollAnimation({ direction: 'up', delay: 200 });
+  const { elementRef: subtitleRef, animationClasses: subtitleClasses } = useScrollAnimation({ direction: 'up', delay: 400 });
+  const { elementRef: buttonsRef, animationClasses: buttonsClasses } = useScrollAnimation({ direction: 'up', delay: 600 });
+  const { elementRef: imageRef, animationClasses: imageClasses } = useScrollAnimation({ direction: 'right', delay: 300 });
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -16,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <div className="mb-6">
+            <div ref={titleRef} className={`mb-6 ${titleClasses}`}>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">
                   The Product Mindset: Abdullah's Journey in Tech & Data
@@ -31,7 +37,7 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div ref={buttonsRef} className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${buttonsClasses}`}>
               <Button 
                 onClick={() => scrollToSection("#projects")}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg"
@@ -50,7 +56,7 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
+            <div ref={imageRef} className={`relative ${imageClasses}`}>
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 p-1">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img 

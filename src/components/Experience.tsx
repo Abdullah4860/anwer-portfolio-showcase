@@ -1,8 +1,11 @@
 
 import { Briefcase, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Experience = () => {
+  const { elementRef: headerRef, animationClasses: headerClasses } = useScrollAnimation({ direction: 'up', delay: 100 });
+
   const experiences = [
     {
       company: "Simpaisa",
@@ -60,7 +63,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className={`text-center mb-16 ${headerClasses}`}>
           <h2 className="text-4xl font-bold mb-4">
             Work <span className="text-orange-400">Experience</span>
           </h2>
@@ -68,49 +71,58 @@ const Experience = () => {
         </div>
 
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="p-8 bg-slate-800 border-slate-700 hover:border-orange-400 transition-all duration-300">
-              <div className="flex flex-col md:flex-row md:items-start md:space-x-6">
-                <div className="flex-shrink-0 mb-4 md:mb-0">
-                  <div className="bg-orange-500 p-4 rounded-lg">
-                    <Briefcase className="text-white" size={24} />
-                  </div>
-                </div>
-                
-                <div className="flex-grow">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
-                      <p className="text-xl text-orange-400 font-semibold">{exp.company}</p>
+          {experiences.map((exp, index) => {
+            const { elementRef, animationClasses } = useScrollAnimation({ 
+              direction: 'up', 
+              delay: 200 + (index * 200) 
+            });
+            
+            return (
+              <div key={index} ref={elementRef} className={animationClasses}>
+                <Card className="p-8 bg-slate-800 border-slate-700 hover:border-orange-400 transition-all duration-300">
+                  <div className="flex flex-col md:flex-row md:items-start md:space-x-6">
+                    <div className="flex-shrink-0 mb-4 md:mb-0">
+                      <div className="bg-orange-500 p-4 rounded-lg">
+                        <Briefcase className="text-white" size={24} />
+                      </div>
                     </div>
-                    <div className="flex items-center text-gray-400 mt-2 md:mt-0">
-                      <Calendar className="mr-2" size={16} />
-                      <span>{exp.period}</span>
+                    
+                    <div className="flex-grow">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                          <h3 className="text-2xl font-bold text-white mb-1">{exp.role}</h3>
+                          <p className="text-xl text-orange-400 font-semibold">{exp.company}</p>
+                        </div>
+                        <div className="flex items-center text-gray-400 mt-2 md:mt-0">
+                          <Calendar className="mr-2" size={16} />
+                          <span>{exp.period}</span>
+                        </div>
+                      </div>
+                      
+                      <p className="text-gray-300 mb-4 italic">{exp.description}</p>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-lg font-semibold text-white mb-3">Key Achievements:</h4>
+                        <ul className="space-y-2">
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <li key={achIndex} className="flex items-start text-gray-300">
+                              <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <span>{achievement}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="mt-4 p-3 bg-slate-700 rounded-lg">
+                        <p className="text-sm text-gray-400 mb-1">Skills:</p>
+                        <p className="text-gray-300 text-sm">{exp.skills}</p>
+                      </div>
                     </div>
                   </div>
-                  
-                  <p className="text-gray-300 mb-4 italic">{exp.description}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="text-lg font-semibold text-white mb-3">Key Achievements:</h4>
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start text-gray-300">
-                          <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="mt-4 p-3 bg-slate-700 rounded-lg">
-                    <p className="text-sm text-gray-400 mb-1">Skills:</p>
-                    <p className="text-gray-300 text-sm">{exp.skills}</p>
-                  </div>
-                </div>
+                </Card>
               </div>
-            </Card>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
