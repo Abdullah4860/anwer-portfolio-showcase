@@ -24,6 +24,21 @@ const Projects = () => {
       ]
     },
     {
+      title: "Netflix Data Analysis",
+      year: "2023",
+      description: "An exploratory data analysis (EDA) project uncovering content trends on Netflix, such as genre distribution, release year patterns, and country-wise content diversity. Includes visual insights to help understand viewer preferences and platform strategy.",
+      techStack: ["Python", "Pandas", "Matplotlib", "Seaborn", "Jupyter Notebook"],
+      image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=500&h=300",
+      buttons: [
+        {
+          label: "GitHub Code",
+          url: "https://github.com/Abdullah4860/Portfolioprojects/blob/main/Netflix%20Data%20Analysis.ipynb",
+          icon: Github,
+          variant: "outline"
+        }
+      ]
+    },
+    {
       title: "Property Price Prediction",
       year: "2022",
       description: "Machine learning model for real estate price prediction using regression algorithms and feature engineering.",
