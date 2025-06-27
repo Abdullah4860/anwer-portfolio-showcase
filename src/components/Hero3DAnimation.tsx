@@ -56,7 +56,7 @@ const DataParticles = () => {
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, particleCount]}>
       <boxGeometry args={[0.1, 0.1, 0.1]} />
-      <meshBasicMaterial color="#ff7f50" opacity={0.6} transparent />
+      <meshBasicMaterial color="#ff7f50" opacity={0.6} transparent={true} />
     </instancedMesh>
   );
 };
@@ -96,9 +96,7 @@ const NetworkConnections = () => {
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
         
         return (
-          <line key={index} geometry={geometry}>
-            <lineBasicMaterial color="#ff7f50" opacity={0.3} transparent />
-          </line>
+          <primitive key={index} object={new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: '#ff7f50', opacity: 0.3, transparent: true }))} />
         );
       })}
     </group>
