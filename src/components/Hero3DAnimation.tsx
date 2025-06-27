@@ -91,22 +91,16 @@ const NetworkConnections = () => {
 
   return (
     <group ref={linesRef}>
-      {connections.map((connection, index) => (
-        <line key={index}>
-          <bufferGeometry>
-            <bufferAttribute
-              attach="attributes-position"
-              count={2}
-              array={new Float32Array([
-                connection.start.x, connection.start.y, connection.start.z,
-                connection.end.x, connection.end.y, connection.end.z
-              ])}
-              itemSize={3}
-            />
-          </bufferGeometry>
-          <lineBasicMaterial color="#ff7f50" opacity={0.3} transparent />
-        </line>
-      ))}
+      {connections.map((connection, index) => {
+        const points = [connection.start, connection.end];
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        
+        return (
+          <line key={index} geometry={geometry}>
+            <lineBasicMaterial color="#ff7f50" opacity={0.3} transparent />
+          </line>
+        );
+      })}
     </group>
   );
 };
