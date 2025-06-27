@@ -2,6 +2,7 @@
 import { ArrowDown, Mail, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import Hero3DAnimation from "./Hero3DAnimation";
 
 const Hero = () => {
   const { elementRef: titleRef, animationClasses: titleClasses } = useScrollAnimation({ direction: 'up', delay: 200 });
@@ -18,8 +19,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <Hero3DAnimation />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/90 to-slate-900/90"></div>
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <div ref={titleRef} className={`mb-6 ${titleClasses}`}>
@@ -74,7 +76,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <button 
           onClick={() => scrollToSection("#about")}
           className="text-orange-400 hover:text-orange-300 transition-colors"
