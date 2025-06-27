@@ -53,10 +53,16 @@ const DataParticles = () => {
     }
   });
 
+  const material = useMemo(() => new THREE.MeshBasicMaterial({ 
+    color: '#ff7f50', 
+    opacity: 0.6, 
+    transparent: true 
+  }), []);
+
   return (
     <instancedMesh ref={meshRef} args={[undefined, undefined, particleCount]}>
       <boxGeometry args={[0.1, 0.1, 0.1]} />
-      <meshBasicMaterial color="#ff7f50" opacity={0.6} transparent={true} />
+      <primitive object={material} attach="material" />
     </instancedMesh>
   );
 };
@@ -105,8 +111,8 @@ const NetworkConnections = () => {
 
 const Hero3DAnimation = () => {
   return (
-    <div className="absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 10], fov: 60 }}>
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      <Canvas camera={{ position: [0, 0, 10], fov: 60 }} style={{ width: '100%', height: '100%' }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <DataParticles />
