@@ -93,11 +93,21 @@ const About = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">Education</h3>
-                  <p className="text-gray-300">
-                    Bachelor's in Computer Science<br />
-                    IBA, Karachi (2024) • GPA: 3.48<br />
-                    Dean's List & Merit Scholar
-                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-gray-300">
+                        <strong>Masters in Business Analytics</strong><br />
+                        Temple University (Expected 2026)
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-gray-300">
+                        <strong>Bachelor's in Computer Science</strong><br />
+                        IBA, Karachi (2024) • GPA: 3.48<br />
+                        Dean's List & Merit Scholar
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
