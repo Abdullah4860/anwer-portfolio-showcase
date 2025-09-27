@@ -49,7 +49,7 @@ const About = () => {
   ];
 
   const handleResumeDownload = () => {
-    window.open('https://drive.google.com/uc?export=download&id=1jpjZM8Fytq7HniDq1ZZzH4dCkVDzldDN', '_blank');
+    window.open('https://drive.google.com/uc?export=download&id=1JDVLNjHgvDQzVCftEJsHDIzzpmhfk9aj', '_blank');
   };
 
   return (
