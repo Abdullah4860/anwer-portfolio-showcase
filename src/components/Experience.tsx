@@ -9,7 +9,7 @@ const Experience = () => {
   const experiences = [
     {
       company: "Simpaisa",
-      role: "Product Data & AI",
+      role: "Product Owner",
       period: "June 2024 – Present",
       location: "Karachi (Hybrid)",
       description: "As a Product Owner at Simpaisa, I work at the intersection of fintech, data automation, and product development.",
