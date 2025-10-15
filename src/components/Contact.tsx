@@ -40,14 +40,14 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "abdullahanwer308@yahoo.com",
-      href: "mailto:abdullahanwer308@yahoo.com"
+      value: "abdullahanwer308@gmail.com",
+      href: "mailto:abdullahanwer308@gmail.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "0331 2888131",
-      href: "tel:+923312888131"
+      value: "+1 (267) 301-4768",
+      href: "tel:+12673014768"
     },
     {
       icon: Linkedin,
