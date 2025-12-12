@@ -65,16 +65,16 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <div ref={contentRef} className={contentClasses}>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I help businesses build and scale data-driven products that simplify payments, drive automation, and ensure compliance — especially in fast-moving fintech environments.
+              I help businesses and healthcare organizations build and scale data-driven products that simplify operations, drive automation, and ensure compliance — especially in fast-moving fintech and healthcare environments.
             </p>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              With hands-on experience at Simpaisa and Daraz (Alibaba Group), I've worked on launching remittance products, automating lead qualification using AI, and improving decision-making through real-time analytics. From managing global API integrations to implementing PCI DSS and AML-compliance systems, I enjoy solving complex product challenges at the intersection of data, payments, and technology.
+              With hands-on experience at Simpaisa, Daraz (Alibaba Group), and Temple Health, I've worked on launching remittance products, automating lead qualification using AI, and supporting ALS research through data analytics. From managing global API integrations to implementing PCI DSS, AML-compliance systems, and healthcare data pipelines, I enjoy solving complex challenges at the intersection of data, technology, and business impact.
             </p>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              My work combines product thinking, process automation, and data intelligence — whether it's reducing manual workflows by 50%, launching a product that captures 10% market share, or enabling fraud detection through Power BI + Python.
+              My work combines product thinking, process automation, and data intelligence — whether it's reducing manual workflows by 50%, launching a product that captures 10% market share, or enabling insights from healthcare datasets through Python and Power BI.
             </p>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              I love working with cross-functional teams, asking the right questions, and delivering measurable outcomes that move the business forward.
+              I love working with cross-functional teams, asking the right questions, and delivering measurable outcomes that move businesses and healthcare initiatives forward.
             </p>
             <Button 
               onClick={handleResumeDownload}
