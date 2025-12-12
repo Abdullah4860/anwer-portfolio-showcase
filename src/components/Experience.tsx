@@ -8,9 +8,23 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: "Temple Health University – Neurology Department",
+      role: "Graduate Student Worker – Data Analytics",
+      period: "November 2025 – Present",
+      location: "Philadelphia, PA",
+      description: "Supporting ALS research through data analytics, visualization, and Python-based data processing.",
+      achievements: [
+        "Cleaned, structured, and refined large-scale patient datasets related to ALS research, ensuring high-quality and analyzable data for the research team",
+        "Developed Python scripts for data preprocessing, validation, and analysis to support accurate research outcomes",
+        "Created interactive dashboards and visualizations in Tableau to track patient metrics and disease progression trends",
+        "Collaborated with neurology researchers to translate raw data into actionable insights for ongoing ALS studies"
+      ],
+      skills: "Python, Data Analytics, Tableau, Data Preprocessing, Healthcare Analytics, Data Visualization, ALS Research"
+    },
+    {
       company: "Simpaisa",
       role: "Product Owner",
-      period: "June 2024 – Present",
+      period: "June 2024 – August 2025",
       location: "Karachi (Hybrid)",
       description: "As a Product Owner at Simpaisa, I work at the intersection of fintech, data automation, and product development.",
       achievements: [
