@@ -9,6 +9,21 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Healthcare Data Analytics Project",
+      year: "2024",
+      description: "Comprehensive healthcare analytics project analyzing patient experience, clinical visit data, medication trends, and pharmacy sales. Features NLP sentiment analysis on 20,000+ patient reviews, wait time analysis, and geographic patient distribution insights.",
+      techStack: ["Python", "Pandas", "Plotly", "Matplotlib", "TextBlob", "NLP"],
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=500&h=300",
+      buttons: [
+        {
+          label: "GitHub Code",
+          url: "https://github.com/abdullahanwer3080/Portfolioprojects/tree/main/Healthcare_Data_Analytics_Project",
+          icon: Github,
+          variant: "outline"
+        }
+      ]
+    },
+    {
       title: "YouTube Data Engineering Project (AWS | ETL | Serverless)",
       year: "2024",
       description: "A complete cloud-native data engineering pipeline built on AWS. This project ingests and transforms trending YouTube video data using services like AWS Lambda, Glue, S3, and Athena. The final dataset is visualized using Amazon QuickSight for actionable insights.",
