@@ -65,7 +65,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
           <div ref={contentRef} className={contentClasses}>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-              I help businesses and healthcare organizations build and scale data-driven products that simplify operations, drive automation, and ensure compliance, especially in fast-moving fintech and healthcare environments.
+              I help businesses and healthcare organizations build and scale data driven products that simplify operations, drive automation, and ensure compliance, especially in fast moving fintech and healthcare environments.
             </p>
             <p className="text-lg text-gray-300 mb-6 leading-relaxed">
               With hands-on experience at Simpaisa, Daraz (Alibaba Group), and Temple Health, I've worked on launching remittance products, automating lead qualification using AI, and supporting ALS research through data analytics. From managing global API integrations to implementing PCI DSS, AML-compliance systems, and healthcare data pipelines, I enjoy solving complex challenges at the intersection of data, technology, and business impact.
