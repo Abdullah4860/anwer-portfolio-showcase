@@ -9,17 +9,18 @@ const Experience = () => {
   const experiences = [
     {
       company: "Temple Health University – Neurology Department",
-      role: "Graduate Student Worker – Data Analytics",
-      period: "November 2025 – Present",
+      role: "Healthcare Analytics Engineer",
+      period: "September 2025 – Present",
       location: "Philadelphia, PA",
-      description: "Supporting ALS research through data analytics, visualization, and Python-based data processing.",
+      description: "Designing and building end-to-end data pipelines, database architecture, and interactive analytics solutions to support ALS research.",
       achievements: [
-        "Cleaned, structured, and refined large-scale patient datasets related to ALS research, ensuring high-quality and analyzable data for the research team",
-        "Developed Python scripts for data preprocessing, validation, and analysis to support accurate research outcomes",
-        "Created interactive dashboards and visualizations in Tableau to track patient metrics and disease progression trends",
-        "Collaborated with neurology researchers to translate raw data into actionable insights for ongoing ALS studies"
+        "Designed and implemented an end-to-end ETL pipeline to consolidate fragmented clinical datasets across multiple hospital systems into a centralized analytical database, reducing data retrieval time by 40% and enabling weekly automated refresh of ALS patient data",
+        "Engineered database architecture including schema design, normalized tables, and curated analytical views, improving query performance by 35% for research workflows",
+        "Built automated data workflows to clean, validate, and transform incoming datasets, reducing manual preprocessing effort by 50% and improving data reliability",
+        "Developed an interactive Shiny application on top of curated datasets enabling dynamic filtering, search, and visualization of ALSFRS score progression, increasing research team efficiency in patient analysis by 30%",
+        "Enabled researchers to explore longitudinal patient trends through real-time dashboards, reducing time to generate insights from days to hours"
       ],
-      skills: "Python, Data Analytics, Tableau, Data Preprocessing, Healthcare Analytics, Data Visualization, ALS Research"
+      skills: "ETL Pipelines, Database Architecture, SQL, R, Shiny, Data Engineering, Healthcare Analytics, ALS Research, Data Visualization, Workflow Automation"
     },
     {
       company: "Simpaisa",
