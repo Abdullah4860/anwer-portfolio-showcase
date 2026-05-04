@@ -10,7 +10,7 @@ const Services = () => {
     {
       icon: Users,
       title: "Product Ownership & Scrum Coaching",
-      description: "Leading cross-functional teams through agile product development, backlog management, and stakeholder alignment to deliver impactful solutions.",
+      description: "Leading cross functional teams through agile product development, backlog management, and stakeholder alignment to deliver impactful solutions.",
       features: ["Agile Methodology", "Sprint Planning", "Stakeholder Management", "Product Roadmap"]
     },
     {

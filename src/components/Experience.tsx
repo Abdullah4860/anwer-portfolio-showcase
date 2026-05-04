@@ -12,13 +12,13 @@ const Experience = () => {
       role: "Healthcare Analytics Engineer",
       period: "September 2025 – Present",
       location: "Philadelphia, PA",
-      description: "Designing and building end-to-end data pipelines, database architecture, and interactive analytics solutions to support ALS research.",
+      description: "Designing and building end to end data pipelines, database architecture, and interactive analytics solutions to support ALS research.",
       achievements: [
-        "Designed and implemented an end-to-end ETL pipeline to consolidate fragmented clinical datasets across multiple hospital systems into a centralized analytical database, reducing data retrieval time by 40% and enabling weekly automated refresh of ALS patient data",
+        "Designed and implemented an end to end ETL pipeline to consolidate fragmented clinical datasets across multiple hospital systems into a centralized analytical database, reducing data retrieval time by 40% and enabling weekly automated refresh of ALS patient data",
         "Engineered database architecture including schema design, normalized tables, and curated analytical views, improving query performance by 35% for research workflows",
         "Built automated data workflows to clean, validate, and transform incoming datasets, reducing manual preprocessing effort by 50% and improving data reliability",
         "Developed an interactive Shiny application on top of curated datasets enabling dynamic filtering, search, and visualization of ALSFRS score progression, increasing research team efficiency in patient analysis by 30%",
-        "Enabled researchers to explore longitudinal patient trends through real-time dashboards, reducing time to generate insights from days to hours"
+        "Enabled researchers to explore longitudinal patient trends through real time dashboards, reducing time to generate insights from days to hours"
       ],
       skills: "ETL Pipelines, Database Architecture, SQL, R, Shiny, Data Engineering, Healthcare Analytics, ALS Research, Data Visualization, Workflow Automation"
     },
@@ -35,7 +35,7 @@ const Experience = () => {
         "Launched a remittance product aligned with SBP incentives, resulting in a 25% increase in transaction volume",
         "Led PCI DSS 4.0 and ISO 27001 implementation to improve platform security and reduce compliance risk by 30%",
         "Automated reconciliation and reporting for finance and support, cutting manual tasks by 50%",
-        "Managed pay-in/payout products that improved monthly volume by 6%",
+        "Managed pay in/payout products that improved monthly volume by 6%",
         "Contributed to a new fintech product that gained 10% market share in the first year",
         "Used JIRA and Agile practices to improve delivery speed and sprint coordination",
         "Built data dashboards to support product decisions, improving tracking accuracy by 15%"
@@ -53,8 +53,8 @@ const Experience = () => {
         "Integrated workforce attendance systems to enable performance tracking, saving 40% manual effort",
         "Built an internal IT chatbot that reduced support costs by 30% and improved response time by 50%",
         "Improved regional operational efficiency by 35% by optimizing digital workflows",
-        "Managed third-party tech vendors and internal developers to launch automation solutions",
-        "Wrote PDDs, handled UAT, and led go-lives for internal RPA and automation tools",
+        "Managed third party tech vendors and internal developers to launch automation solutions",
+        "Wrote PDDs, handled UAT, and led go lives for internal RPA and automation tools",
         "Negotiated vendor contracts that resulted in 15% cost savings",
         "Created dashboards for internal teams, cutting manual reporting time by 60%"
       ],

@@ -31,11 +31,11 @@ const Hero = () => {
                 </span>
               </h1>
               <div className="text-xl md:text-2xl text-gray-300 mb-6">
-                Product Owner | Data-Driven Innovator | API Integration Specialist
+                Product Owner | Data Driven Innovator | API Integration Specialist
               </div>
               <p className="text-lg text-gray-400 max-w-2xl">
                 Bridging business and technology through agile delivery, data insights, 
-                and user-centric product development.
+                and user centric product development.
               </p>
             </div>
 
