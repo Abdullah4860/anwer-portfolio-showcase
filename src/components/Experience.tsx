@@ -8,6 +8,21 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: "I Fund Cities",
+      role: "Analytics Engineer Intern",
+      period: "May 2026 – Present",
+      location: "",
+      description: "Working on data infrastructure and reporting for loan servicing operations, building semantic models and streamlining analytics workflows using Databricks and AI-driven tools.",
+      achievements: [
+        "Built and maintained Loan Servicing data pipelines in Databricks, reducing data refresh time by 35% and manual processing effort by 40%",
+        "Implemented semantic models to power the Company Scorecard, standardizing key business metrics and reducing reporting discrepancies by 25%",
+        "Streamlined reporting and dashboarding for Servicing operations, reducing time to generate insights by 30%",
+        "Integrated AI-driven processes into recurring analytics workflows, cutting manual effort on repetitive tasks by 20%",
+        "Collaborated with cross functional teams to align data models with evolving business reporting needs, improving cross team reporting consistency by 15%"
+      ],
+      skills: "Databricks, Semantic Modeling, Data Pipelines, Loan Servicing Analytics, Dashboarding, AI Workflow Automation, SQL, Python"
+    },
+    {
       company: "Temple Health University – Neurology Department",
       role: "Healthcare Analytics Engineer",
       period: "September 2025 – Present",
